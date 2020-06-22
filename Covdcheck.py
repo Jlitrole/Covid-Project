@@ -1,3 +1,7 @@
-# Python 3
+# Data Aggregate tool for Covid numbers from API site
 
-def function check(array)
+from selenium import webdriver
+from Beautifulsoup4 import Beautifulsoup4
+import pandas as pd
+
+content = driver.page
