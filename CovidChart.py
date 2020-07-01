@@ -3,6 +3,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import requests
 import json
+
 def getStats(country):
     api_url = 'https://covidtracking.com/api'+country
     api_params = {
