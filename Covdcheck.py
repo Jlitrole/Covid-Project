@@ -1,18 +1,15 @@
-# Data Aggregate tool for Covid numbers from API site
+import requests
+from bs4 import BeautifulSoup
 
-from selenium import webdriver
-from Beautifulsoup4 import Beautifulsoup4
-import pandas as pd
+URL = 'https://covidtracking.com}'
 
-for url in ['https://covidtracking.com/api']:
-    try:
-        response = request.get('https://covidtracking.com/api')
+header = {"User-Agent": 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_5) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.1.1 Safari/605.1.15'}
 
-        # If the response was successful, no Exception will be raised
-        response.raise_for_status()
-    except HTTPError as http_err:
-        print(f'HTTP error occurred: {http_err}')  # Python 3.6
-    except Exception as err:
-        print(f'Other error occurred: {err}')  # Python 3.6
-    else:
-        print('Success!')
+page = requests.get(URL, headers=headers)
+
+soup = BeautifulSoup(page.content, 'html.parser')
+
+title = soup.find(id='total-module--number--2XxWt")
+                  
+          
+
